@@ -1,0 +1,20 @@
+server:
+    port: 9007
+    ssl:
+        enabled: false
+
+debug: false
+
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/smsDB?ApplicationName=java-api-local
+        username: postgres
+        password: toor
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
