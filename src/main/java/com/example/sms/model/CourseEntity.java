@@ -24,23 +24,6 @@ public class CourseEntity {
    @OneToMany (mappedBy = "course")
    private List<LectureEntity> lectures;
 
-    @ManyToMany(mappedBy = "attendedCourses")
-    Set<StudentEntity> attends;
-
     public String CourseName;
-
-    public long getId(){
-        return id;
-    }
-
-    public String getCourseName() {
-        return CourseName;
-    }
-
-    public void setCourseName(String courseName) {
-        CourseName = courseName;
-    }
-
-
 
 }
