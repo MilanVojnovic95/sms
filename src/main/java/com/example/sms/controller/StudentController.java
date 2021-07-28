@@ -2,9 +2,7 @@ package com.example.sms.controller;
 
 
 
-import com.example.sms.repository.CourseRepository;
 import com.example.sms.model.StudentEntity;
-import com.example.sms.model.LectureEntity;
 import com.example.sms.service.LectureService;
 import com.example.sms.service.StudentService;
 import com.example.sms.service.StudentCourseService;
@@ -20,7 +18,7 @@ import java.util.List;
 public class StudentController {
 
 
-    private final CourseRepository courseRepository;
+
     private final StudentService studentService;
     private final LectureService lectureService;
     private final StudentCourseService studentCourseService;
@@ -33,7 +31,7 @@ public class StudentController {
 
 
     @GetMapping("/student/{studentId}/attending-lectures")
-    public List<LectureEntity>getLectureEntityByStudentId(@PathVariable Long studentId){
+    public List<String>getLectureEntityByStudentId(@PathVariable Long studentId){
         return lectureService.getLectureEntityByStudentId(studentId);
     }
 
@@ -41,6 +39,31 @@ public class StudentController {
     public Long getStudentsAverageGrade(@PathVariable Long studentId){
         return studentCourseService.getStudentsAverageGrade(studentId);
     }
+
+    @PostMapping("/update/student/{studentId}/course/{courseId}")
+    public String updateGrade (@PathVariable Long studentId,
+                          @PathVariable  Long courseId,
+                          @RequestBody Integer grade){
+
+
+       return studentCourseService.updateGrade(studentId, courseId, grade);
+
+
+    }
+
+    @PostMapping("/student/{studentId}/course/{courseId}")
+    public String addGrade (@PathVariable Long studentId,
+                               @PathVariable  Long courseId,
+                               @RequestBody Integer grade){
+
+
+        return studentCourseService.addGrade(studentId, courseId, grade);
+
+
+    }
+
+
+
 
 
 

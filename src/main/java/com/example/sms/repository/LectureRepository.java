@@ -15,6 +15,6 @@ public interface LectureRepository  extends CrudRepository<LectureEntity, Intege
                 "           INNER JOIN StudentCourseEntity student_course on lecture.course.id = student_course.course_id" +
                 "           INNER JOIN StudentEntity student on student.id = student_course.student_id" +
                 "       WHERE student.id = :studentId")
-        List<LectureEntity> getLectureEntityByStudentId(Long studentId);
+        List<String> getLectureEntityByStudentId(Long studentId);
 
 }

@@ -31,9 +31,75 @@
 			"name": "Get the average grade of all courses the student has passed.",
 			"request": {
 				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9007/api/student/2/average-grade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9007",
+					"path": [
+						"api",
+						"student",
+						"2",
+						"average-grade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the grade of a student for the given course",
+			"request": {
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:9007/api/update/student/{studentId}/course/{courseId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9007",
+					"path": [
+						"api",
+						"update",
+						"student",
+						"{studentId}",
+						"course",
+						"{courseId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark the grade of a student for the given course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9007/api/update/student/{studentId}/course/{courseId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9007",
+					"path": [
+						"api",
+						"update",
+						"student",
+						"{studentId}",
+						"course",
+						"{courseId}"
+					]
 				}
 			},
 			"response": []
